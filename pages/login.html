@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập / Đăng ký</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .login-container, .register-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        .form-title {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .form-label {
+            font-weight: 500;
+        }
+        .form-control {
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .btn-submit {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            width: 100%;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn-submit:hover {
+            background-color: #0069d9;
+        }
+        .switch-form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .switch-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .switch-link:hover {
+            text-decoration: underline;
+        }
+        .hide {
+            display: none;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .alert {
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Thông báo thành công -->
+    <div id="successAlert" class="alert alert-success hide" style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 1000;">
+        Đăng nhập thành công!
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-container" id="loginForm">
+        <h2 class="form-title">Đăng nhập</h2>
+        <form>
+            <div class="mb-3">
+                <label for="loginEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="loginEmail" placeholder="Địa chỉ email" required>
+            </div>
+            <div class="mb-3">
+                <label for="loginPassword" class="form-label">Mật khẩu</label>
+                <input type="password" class="form-control" id="loginPassword" placeholder="Mật khẩu" required>
+            </div>
+            <button type="submit" class="btn-submit">Đăng nhập</button>
+            <div class="switch-form">
+                Chưa có tài khoản? <a href="#" class="switch-link" onclick="toggleForms()">Đăng ký</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Register Form -->
+    <div class="register-container hide" id="registerForm">
+        <h2 class="form-title">Đăng ký</h2>
+        <form>
+            <div class="mb-3">
+                <label for="registerName" class="form-label">Họ và tên</label>
+                <input type="text" class="form-control" id="registerName" placeholder="Họ và tên" required>
+            </div>
+            <div class="mb-3">
+                <label for="registerEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="registerEmail" placeholder="Địa chỉ email" required>
+            </div>
+            <div class="mb-3">
+                <label for="registerPassword" class="form-label">Mật khẩu</label>
+                <input type="password" class="form-control" id="registerPassword" placeholder="Mật khẩu" required>
+            </div>
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Xác nhận mật khẩu</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Xác nhận mật khẩu" required>
+            </div>
+            <button type="submit" class="btn-submit">Đăng ký</button>
+            <div class="switch-form">
+                Đã có tài khoản? <a href="#" class="switch-link" onclick="toggleForms()">Đăng nhập</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Kiểm tra đã đăng nhập hay chưa
+        document.addEventListener('DOMContentLoaded', function() {
+            // Kiểm tra nếu đã đăng nhập thì chuyển đến trang quản lý dự án
+            if (localStorage.getItem('currentUser')) {
+                window.location.href = 'project-management.html';
+            }
+        });
+
+        // Chuyển đổi giữa form đăng nhập và đăng ký
+        function toggleForms() {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            loginForm.classList.toggle('hide');
+            registerForm.classList.toggle('hide');
+        }
+
+        // Hiển thị thông báo thành công
+        function showSuccessMessage(message) {
+            const successAlert = document.getElementById('successAlert');
+            successAlert.textContent = message;
+            successAlert.classList.remove('hide');
+            
+            // Ẩn thông báo sau 2 giây
+            setTimeout(function() {
+                successAlert.classList.add('hide');
+                // Chuyển hướng sau khi hiển thị thông báo
+                window.location.href = 'project-management.html';
+            }, 2000);
+        }
+
+        // Hiển thị thông báo lỗi
+        function showError(inputElement, message) {
+            // Xóa thông báo lỗi cũ nếu có
+            const existingError = inputElement.parentElement.querySelector('.error-message');
+            if (existingError) {
+                existingError.remove();
+            }
+
+            // Tạo và hiển thị thông báo lỗi mới
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+
+            // Thêm viền đỏ cho input
+            inputElement.style.borderColor = 'red';
+
+            // Thêm thông báo lỗi vào DOM
+            inputElement.parentElement.appendChild(errorDiv);
+        }
+
+        // Xóa thông báo lỗi
+        function clearError(inputElement) {
+            const existingError = inputElement.parentElement.querySelector('.error-message');
+            if (existingError) {
+                existingError.remove();
+            }
+            inputElement.style.borderColor = '';
+        }
+
+        // Kiểm tra email hợp lệ
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Xử lý đăng ký
+        document.querySelector('#registerForm form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nameInput = document.getElementById('registerName');
+            const emailInput = document.getElementById('registerEmail');
+            const passwordInput = document.getElementById('registerPassword');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+
+            let isValid = true;
+
+            // Xóa tất cả thông báo lỗi cũ
+            clearError(nameInput);
+            clearError(emailInput);
+            clearError(passwordInput);
+            clearError(confirmPasswordInput);
+
+            // Kiểm tra họ và tên
+            if (!nameInput.value.trim()) {
+                showError(nameInput, 'Họ và tên không được để trống');
+                isValid = false;
+            }
+
+            // Kiểm tra email
+            if (!emailInput.value.trim()) {
+                showError(emailInput, 'Email không được để trống');
+                isValid = false;
+            } else if (!isValidEmail(emailInput.value.trim())) {
+                showError(emailInput, 'Email không đúng định dạng');
+                isValid = false;
+            }
+
+            // Kiểm tra mật khẩu
+            if (!passwordInput.value) {
+                showError(passwordInput, 'Mật khẩu không được để trống');
+                isValid = false;
+            } else if (passwordInput.value.length < 6) {
+                showError(passwordInput, 'Mật khẩu phải có tối thiểu 6 ký tự');
+                isValid = false;
+            }
+
+            // Kiểm tra mật khẩu xác nhận
+            if (!confirmPasswordInput.value) {
+                showError(confirmPasswordInput, 'Xác nhận mật khẩu không được để trống');
+                isValid = false;
+            } else if (confirmPasswordInput.value !== passwordInput.value) {
+                showError(confirmPasswordInput, 'Mật khẩu xác nhận không trùng khớp');
+                isValid = false;
+            }
+
+            // Nếu tất cả đều hợp lệ, tiến hành đăng ký
+            if (isValid) {
+                // Tạo người dùng mới
+                const newUser = {
+                    id: Date.now(),
+                    fullName: nameInput.value.trim(),
+                    email: emailInput.value.trim(),
+                    password: passwordInput.value
+                };
+                
+                // Kiểm tra xem email đã tồn tại chưa
+                let users = JSON.parse(localStorage.getItem('users')) || [];
+                const existingUser = users.find(user => user.email === newUser.email);
+                
+                if (existingUser) {
+                    showError(emailInput, 'Email này đã được sử dụng');
+                    return;
+                }
+                
+                // Lưu người dùng vào localStorage
+                users.push(newUser);
+                localStorage.setItem('users', JSON.stringify(users));
+                
+                // Đăng nhập người dùng mới
+                localStorage.setItem('currentUser', JSON.stringify(newUser));
+                
+                // Hiển thị thông báo đăng ký thành công
+                showSuccessMessage('Đăng ký thành công!');
+            }
+        });
+
+        // Xử lý đăng nhập
+        document.querySelector('#loginForm form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const emailInput = document.getElementById('loginEmail');
+            const passwordInput = document.getElementById('loginPassword');
+
+            let isValid = true;
+
+            // Xóa tất cả thông báo lỗi cũ
+            clearError(emailInput);
+            clearError(passwordInput);
+
+            // Kiểm tra email
+            if (!emailInput.value.trim()) {
+                showError(emailInput, 'Email không được để trống');
+                isValid = false;
+            }
+
+            // Kiểm tra mật khẩu
+            if (!passwordInput.value) {
+                showError(passwordInput, 'Mật khẩu không được để trống');
+                isValid = false;
+            }
+
+            // Nếu form hợp lệ, kiểm tra thông tin đăng nhập
+            if (isValid) {
+                // Lấy danh sách người dùng từ localStorage
+                let users = JSON.parse(localStorage.getItem('users')) || [];
+                
+                // Tạo mẫu người dùng test nếu chưa có dữ liệu
+                if (users.length === 0) {
+                    users.push({
+                        id: 1,
+                        fullName: "An Nguyễn",
+                        email: "nguyenquangan@gmail.com",
+                        password: "123456"
+                    });
+                    localStorage.setItem('users', JSON.stringify(users));
+                }
+                
+                // Tìm người dùng có email trùng khớp
+                const user = users.find(user => user.email === emailInput.value.trim());
+                
+                if (!user) {
+                    showError(emailInput, 'Email không tồn tại');
+                    return;
+                }
+                
+                // Kiểm tra mật khẩu
+                if (user.password !== passwordInput.value) {
+                    showError(passwordInput, 'Mật khẩu không đúng');
+                    return;
+                }
+                
+                // Đăng nhập thành công
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                
+                // Hiển thị thông báo đăng nhập thành công
+                showSuccessMessage('Đăng nhập thành công!');
+            }
+        });
+    </script>
+</body>
+</html>

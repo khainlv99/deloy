@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Dự Án</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/project-details.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">Quản Lý Dự Án</h4>
+                <div>
+                    <span class="me-3">Dự Án</span>
+                    <span class="me-3">Nhiệm Vụ của tôi</span>
+                    <span>Đăng Xuất</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-3 mb-5">
+        <!-- Project Title and Description -->
+        <div class="row mb-3">
+            <div class="col-md-8">
+                <h2>Xây dựng website thương mại điện tử</h2>
+                <p>Dự án nhằm phát triển một nền tảng thương mại điện tử với các tính năng như giỏ hàng, thanh toán và quản lý sản phẩm.</p>
+            </div>
+            <div class="col-md-4 text-end">
+                <div class="mb-3">
+                    <!-- Member section header with aligned button -->
+                    <div class="member-section-header">
+                        <h6 class="mb-0">Thành viên</h6>
+                        <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMemberModal">+ Thêm thành viên</button>
+                    </div>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <div class="avatar-large avatar-an me-2">AN</div>
+                        <div class="ms-2">
+                            <div>An Nguyễn</div>
+                            <small class="text-muted">Project owner</small>
+                        </div>
+                        
+                        <div class="avatar-large avatar-ba ms-4 me-2">BA</div>
+                        <div class="ms-2">
+                            <div>Bách Nguyễn</div>
+                            <small class="text-muted">Frontend developer</small>
+                        </div>
+                        
+                        <div class="ms-3 more-options" data-bs-toggle="modal" data-bs-target="#viewMembersModal">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Task Button and Filter -->
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTaskModal">
+                    <i class="bi bi-plus"></i> Thêm nhiệm vụ
+                </button>
+            </div>
+            <div class="col-md-9 d-flex justify-content-end">
+                <div class="dropdown me-2">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sắp xếp theo
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                        <li><a class="dropdown-item" href="#">Ngày bắt đầu</a></li>
+                        <li><a class="dropdown-item" href="#">Hạn chót</a></li>
+                        <li><a class="dropdown-item" href="#">Ưu tiên</a></li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm nhiệm vụ">
+                </div>
+            </div>
+        </div>
+
+        <!-- Task List -->
+        <div class="task-list">
+            <div class="row fw-bold border-bottom pb-2 mb-2">
+                <div class="col-md-3">Tên Nhiệm Vụ</div>
+                <div class="col-md-2">Người Phụ Trách</div>
+                <div class="col-md-1">Ưu Tiên</div>
+                <div class="col-md-1">Ngày Bắt Đầu</div>
+                <div class="col-md-1">Hạn Chót</div>
+                <div class="col-md-2">Tiến độ</div>
+                <div class="col-md-2">Hành động</div>
+            </div>
+
+            <!-- To do section -->
+            <div class="mb-3">
+                <div class="collapsible-section d-flex align-items-center mb-2" data-bs-toggle="collapse" data-bs-target="#todoTasks">
+                    <i class="bi bi-caret-down-fill me-2"></i>
+                    <h6 class="mb-0">To do</h6>
+                </div>
+                <div id="todoTasks" class="collapse show">
+                    <!-- Task 1 -->
+                    <div class="row py-2 border-bottom align-items-center">
+                        <div class="col-md-3">Soạn thảo đề cương dự án</div>
+                        <div class="col-md-2">
+                            <div class="d-flex align-items-center">
+                
+                                <span>An Nguyễn</span>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="status-badge status-thap">Thấp</span>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="task-date">02 - 24</span>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="task-date">02 - 27</span>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="progress-badge progress-done">Đúng tiến độ</span>
+                        </div>
+                        <div class="col-md-2 action-buttons">
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete">Xóa</button>
+                        </div>
+                    </div>
+
+                    <!-- Task 2 -->
+                    <div class="row py-2 border-bottom align-items-center">
+                        <div class="col-md-3">Soạn thảo đề cương dự án</div>
+                        <div class="col-md-2">
+                            <div class="d-flex align-items-center">
+                                
+                                <span>An Nguyễn</span>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="status-badge status-trungbinh">Trung bình</span>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="task-date">02 - 24</span>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="task-date">02 - 27</span>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="progress-badge progress-ongoing">Có rủi ro</span>
+                        </div>
+                        <div class="col-md-2 action-buttons">
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete">Xóa</button>
+                        </div>
+                    </div>
+
+                    <!-- Task 3 -->
+                    <div class="row py-2 border-bottom align-items-center">
+                        <div class="col-md-3">Soạn thảo đề cương dự án</div>
+                        <div class="col-md-2">
+                            <div class="d-flex align-items-center">
+                                
+                                <span>An Nguyễn</span>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="status-badge status-cao">Cao</span>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="task-date">02 - 24</span>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="task-date">02 - 27</span>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="progress-badge progress-late">Trễ hạn</span>
+                        </div>
+                        <div class="col-md-2 action-buttons">
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete">Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- In Progress section -->
+            <div class="mb-3">
+                <div class="collapsible-section d-flex align-items-center mb-2" data-bs-toggle="collapse" data-bs-target="#inProgressTasks">
+                    <i class="bi bi-caret-down-fill me-2"></i>
+                    <h6 class="mb-0">In Progress</h6>
+                </div>
+                <div id="inProgressTasks" class="collapse show">
+                    <!-- In Progress Task -->
+                    <div class="row py-2 border-bottom align-items-center">
+                        <div class="col-md-3">Lên lịch họp kickoff</div>
+                        <div class="col-md-2">
+                            <div class="d-flex align-items-center">
+                                
+                                <span>An Nguyễn</span>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="status-badge status-trungbinh">Trung bình</span>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="task-date">02 - 24</span>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="task-date">02 - 27</span>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="progress-badge progress-ongoing">Có rủi ro</span>
+                        </div>
+                        <div class="col-md-2 action-buttons">
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete">Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pending section -->
+            <div class="mb-3">
+                <div class="collapsible-section d-flex align-items-center mb-2" data-bs-toggle="collapse" data-bs-target="#pendingTasks">
+                    <i class="bi bi-caret-right-fill me-2"></i>
+                    <h6 class="mb-0">Pending</h6>
+                </div>
+                <div id="pendingTasks" class="collapse">
+                    <!-- Will be populated with tasks -->
+                </div>
+            </div>
+
+            <!-- Done section -->
+            <div class="mb-3">
+                <div class="collapsible-section d-flex align-items-center mb-2" data-bs-toggle="collapse" data-bs-target="#doneTasks">
+                    <i class="bi bi-caret-right-fill me-2"></i>
+                    <h6 class="mb-0">Done</h6>
+                </div>
+                <div id="doneTasks" class="collapse">
+                    <!-- Will be populated with tasks -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p class="mb-0">© 2025 Quản Lý Dự Án Nhóm. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Add/Edit Task Modal -->
+    <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTaskModalLabel">Thêm/sửa nhiệm vụ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="taskName" class="form-label">Tên nhiệm vụ</label>
+                            <input type="text" class="form-control" id="taskName" value="Soạn thảo đề cương dự án">
+                            <small class="text-muted">Tên nhiệm vụ dễ đọc</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="assignee" class="form-label">Người phụ trách</label>
+                            <select class="form-select" id="assignee">
+                                <option selected>Chọn người phụ trách</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Trạng thái</label>
+                            <select class="form-select" id="status">
+                                <option selected>Chọn trạng thái nhiệm vụ</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="startDate" class="form-label">Ngày bắt đầu</label>
+                            <input type="date" class="form-control" id="startDate">
+                        </div>
+                        <div class="mb-3">
+                            <label for="endDate" class="form-label">Hạn cuối</label>
+                            <input type="date" class="form-control" id="endDate">
+                        </div>
+                        <div class="mb-3">
+                            <label for="priority" class="form-label">Độ ưu tiên</label>
+                            <select class="form-select" id="priority">
+                                <option selected>Chọn độ ưu tiên</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="progress" class="form-label">Tiến độ</label>
+                            <select class="form-select" id="progress">
+                                <option selected>Chọn tiến độ</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Member Modal -->
+    <div class="modal fade" id="addMemberModal" tabindex="-1" aria-labelledby="addMemberModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addMemberModalLabel">Thêm thành viên</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="memberEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="memberEmail" value="nguyenquangan318@gmail.com">
+                            <small class="text-danger">Thành viên đã tồn tại</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="memberRole" class="form-label">Vai trò</label>
+                            <input type="text" class="form-control" id="memberRole">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Members Modal -->
+    <div class="modal fade member-modal" id="viewMembersModal" tabindex="-1" aria-labelledby="viewMembersModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewMembersModalLabel">thành viên</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h6 class="mb-0">Thành viên</h6>
+                        <h6 class="mb-0">Vai trò</h6>
+                    </div>
+                    
+                    <div class="member-list">
+                        <!-- Member 1 -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                
+                                <div>
+                                    <div>An Nguyễn</div>
+                                    <small class="text-muted">nguyenquangan@gmail.com</small>
+                                </div>
+                            </div>
+                            <div>
+                                <span>Project owner</span>
+                            </div>
+                            <div>
+                                <i class="bi bi-trash text-danger"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Member 2 -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="avatar avatar-ba me-2">BA</div>
+                                <div>
+                                    <div>Bách Nguyễn</div>
+                                    <small class="text-muted">bachng@gmail.com</small>
+                                </div>
+                            </div>
+                            <div>
+                                <span>Frontend developer</span>
+                            </div>
+                            <div>
+                                <i class="bi bi-trash text-danger"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Member 3 -->
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <div class="avatar avatar-du me-2">DU</div>
+                                <div>
+                                    <div>Dương Nguyễn</div>
+                                    <small class="text-muted">duongnh@gmail.com</small>
+                                </div>
+                            </div>
+                            <div>
+                                <span>Backend developer</span>
+                            </div>
+                            <div>
+                                <i class="bi bi-trash text-danger"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/project-details.js"></script>
+</body>
+</html>

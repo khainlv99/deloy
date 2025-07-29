@@ -1,0 +1,44 @@
+
+J
+java:S37403"/Provide the parametrized type for this generic.(ÒËÜõúÿÿÿÿ
+E
+java:S37404"/Provide the parametrized type for this generic.(ç¤—”
+E
+java:S37404"/Provide the parametrized type for this generic.(ç¤—”
+J
+java:S37407"/Provide the parametrized type for this generic.(ÔöŠÿÿÿÿÿ
+q
+java:S1104"VMake vnp_PayUrl a static final constant or non-public and provide accessors if needed.(—°ÀÍşÿÿÿÿ
+o
+java:S1104"YMake vnp_Returnurl a static final constant or non-public and provide accessors if needed.(¦»Ëü
+r
+java:S1104"WMake vnp_TmnCode a static final constant or non-public and provide accessors if needed.(Á«ùûÿÿÿÿ
+p
+java:S1104"ZMake vnp_HashSecret a static final constant or non-public and provide accessors if needed.(´÷¤¢
+k
+java:S1104"VMake vnp_apiUrl a static final constant or non-public and provide accessors if needed.(ÎÑ»"
+K
+java:S1444"0Make this "public static vnp_PayUrl" field final(—°ÀÍşÿÿÿÿ
+I
+java:S1444"3Make this "public static vnp_Returnurl" field final(¦»Ëü
+L
+java:S1444"1Make this "public static vnp_TmnCode" field final(Á«ùûÿÿÿÿ
+J
+java:S1444"4Make this "public static vnp_HashSecret" field final(´÷¤¢
+E
+java:S1444"0Make this "public static vnp_apiUrl" field final(ÎÑ»"
+p
+java:S3008"URename this field "vnp_PayUrl" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—°ÀÍşÿÿÿÿ
+n
+java:S3008"XRename this field "vnp_Returnurl" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦»Ëü
+q
+java:S3008"VRename this field "vnp_TmnCode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á«ùûÿÿÿÿ
+o
+java:S3008"YRename this field "vnp_HashSecret" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´÷¤¢
+j
+java:S3008"URename this field "vnp_apiUrl" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÑ»"
+P
+java:S1118":Add a private constructor to hide the implicit public one.(Óùÿ¿
+h	java:S100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢í¬Åşÿÿÿÿ
+4
+java:S2119l"Save and re-use this "Random".(–áÍÈ

@@ -1,0 +1,275 @@
+.select-film-wrapper {
+  background: #f26b38;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+.select-film-wrapper .title {
+  color: #fff;
+  margin-bottom: 20px;
+}
+.select-film-wrapper .select-card {
+  margin-bottom: 12px;
+}
+.select-film-wrapper .select-card .content {
+  background: #fff;
+  /* height: 200px; */
+  border: solid black 1px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.select-film-wrapper .select-card .content .title {
+  border-bottom: solid black 1px;
+  padding: 8px;
+  color: #fff;
+  margin-bottom: unset;
+  background: #173e65;
+}
+.select-film-wrapper .select-card .content .option-items {
+  padding: 12px;
+  height: 300px;
+  overflow-y: auto;
+  margin-top: 12px;
+}
+.select-film-wrapper .select-card .content .option-items .item {
+  border-bottom: solid 2px #f26b38;
+  padding: 8px 8px;
+  cursor: pointer;
+  margin-bottom: 4px;
+}
+.select-film-wrapper .select-card .content .option-items .time-item {
+  border-radius: 9999px;
+  border: solid 1px #f26b38;
+  padding: 2px 8px;
+  cursor: pointer;
+  width: 64px;
+  text-align: center;
+  height: fit-content;
+}
+.select-film-wrapper .select-card .content .option-items .item:hover {
+  /* background: #f26b38; */
+  color: #f26b38;
+}
+.select-film-wrapper .select-card .content .option-items .item.selected {
+  background: #f26b38;
+  color: #fff;
+  border-radius: 6px;
+}
+#times-combox {
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+#times-combox .time-item:hover {
+  color: #f26b38;
+}
+#times-combox .time-item.selected {
+  background: #f26b38;
+  color: #fff;
+}
+a.btn {
+  width: fit-content;
+  text-decoration: none;
+}
+.btn-primary {
+  background: #f26b38 !important;
+  border-color: #f26b38 !important;
+}
+
+.select-position-wrapper {
+  background: #f26b38;
+  padding: 15px;
+  border-radius: 8px;
+}
+.select-position-wrapper .title {
+  color: #fff;
+  margin-bottom: 20px;
+}
+.select-position-wrapper .position-pick {
+  background: #fff;
+  padding: 15px;
+}
+.select-position-wrapper .position-pick .situations {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+  margin-bottom: 45px;
+}
+.select-position-wrapper .position-pick .situations .row-label {
+  border: solid black 1px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.position-info {
+  margin-top: 32px !important;
+}
+.position-info .label {
+  height: 20px;
+  width: 20px;
+  margin-right: 4px;
+}
+.position-info .label.selecting {
+  background: rgb(107, 165, 20);
+  border-radius: 3px;
+}
+.position-info .label.available {
+  background: rgb(147 155 136 / 50%);
+  border-radius: 3px;
+}
+.position-info .label.sell {
+  background: red;
+  border-radius: 3px;
+}
+.position-info .label.unavailable {
+  background: rgb(44, 152, 215);
+  border-radius: 3px;
+}
+.screen {
+  border-bottom: solid rgb(155, 168, 137) 4px;
+}
+.row-positions {
+  gap: 6px;
+}
+.position-item {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.position-item.available {
+  background: rgb(147 155 136 / 50%);
+  color: #000;
+}
+.position-item.available:hover {
+  border: solid rgb(107, 165, 20) 2px;
+}
+.position-item.sell {
+  background: red;
+}
+.position-item.vip {
+  background: red;
+}
+.position-item.normal {
+  background: rgb(107, 165, 20);
+}
+.position-item.unavailable {
+  background: rgb(44, 152, 215);
+}
+.position-item.selecting {
+  background: rgb(107, 165, 20);
+  color: #fff;
+}
+.number-of-position {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #fff;
+  flex-wrap: wrap;
+}
+.number-of-position select {
+  width: 160px;
+  margin: 0;
+  font-size: 16px;
+}
+.number-of-position input {
+  height: 32px;
+  padding: 4px;
+  border: solid #f26b38 1px;
+  border-radius: 6px;
+  width: 50px;
+  text-align: center;
+}
+.button-back {
+  width: fit-content;
+}
+.btn-primary {
+  background: #f26b38 !important;
+  border-color: #f26b38 !important;
+}
+
+.film-info {
+  border-radius: 8px;
+  padding: 12px;
+  color: #000;
+  border: solid #f26b38 2px;
+}
+.total-price {
+  color: #f26b38;
+  font-weight: 600;
+  font-size: 24px;
+}
+@media screen and (max-width: 768px) {
+  .position-item,
+  .select-position-wrapper .position-pick .situations .row-label {
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+  }
+  .row-positions {
+    gap: 2px !important;
+  }
+  .select-position-wrapper,
+  .select-position-wrapper .position-pick {
+    padding: 6px;
+  }
+}
+
+.hideNumberArrows::-webkit-inner-spin-button,
+.hideNumberArrows::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  display: none;
+}
+.hideNumberArrows {
+  -moz-appearance: textfield;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  font-size: 1.2rem;
+  gap: 5px;
+  margin-top: 20px;
+}
+.pagination .page-num,
+.pagination .page-previous,
+.pagination .page-next {
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 400;
+  display: block;
+}
+
+.pagination .page-num:hover,
+.pagination .page-previous,
+.pagination .page-next {
+  background-color: #5ab1bb;
+  color: white;
+}
+
+.pagination a {
+  text-decoration: none;
+}
+
+.pagination .active {
+  background-color: #5ab1bb;
+}
+
+.pagination .active .page-num {
+  color: #fff;
+}

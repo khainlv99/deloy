@@ -1,0 +1,59 @@
+* {
+  font-family: Roboto;
+}
+
+th,
+td {
+  font-size: 14px;
+}
+
+.inputCss {
+  width: 25%;
+  padding: 8px 8px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  font-size: 1.2rem;
+  gap: 5px;
+  margin-top: 20px;
+}
+.pagination .page-num,
+.pagination .page-previous,
+.pagination .page-next {
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 400;
+  display: block;
+}
+
+.pagination .page-num:hover,
+.pagination .page-previous,
+.pagination .page-next {
+  background-color: orangered;
+  color: white;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: orangered;
+}
+
+.pagination .active {
+  background-color: orangered;
+}
+
+.pagination .active .page-num {
+  color: #fff;
+}
+.form {
+  box-shadow: none;
+  padding: 0px;
+}

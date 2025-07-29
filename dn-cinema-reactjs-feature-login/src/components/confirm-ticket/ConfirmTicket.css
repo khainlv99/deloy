@@ -1,0 +1,149 @@
+* {
+    font-family: Roboto;
+}
+td{
+    margin: 10px 0;
+    border-style: none;
+}
+
+input{
+    height: 40px;
+}
+select,option{
+    height: 40px;
+}
+button {
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #f26b38;
+    padding: 15px;
+    text-decoration: none;
+    line-height: 1;
+    border:none;
+}
+tr{
+    border-top:20px;
+}
+table {
+    border: none;
+    outline: none;
+}
+@media (min-width: 992px){
+    .col-md-3 {
+        width: 25%;
+        float: left;
+    }
+}
+.col-md-3{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.ticket-header {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.ticket-feature {
+    clear: both;
+    min-height: 0;
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+    display: inline-block;
+}
+.ticket-feature article {
+    clear: both;
+    box-sizing: border-box;
+}
+ararticle{
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+.ticket-feature article img {
+    width: 80%;
+    height: auto;
+}
+@media (min-width: 992px){
+    .col-md-12 {
+        width: 100%;
+    }}
+.ticket-detail .ticket-title {
+    font-size: 14px;
+    line-height: 20px;
+    color: #43464b;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.upper-text {
+    text-transform: uppercase!important;
+}
+.ticket-detail .ticket-title.vn {
+    color: #a0a3a7;
+}
+.ticket-detail .ticket-icon {
+    margin: 10px 0;
+}
+span{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+.ticket-detail .ticket-info {
+    font-size: 13px;
+    color: #43464b;
+}
+.ticket-button {
+    margin-top: 10px;
+    text-align: center;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+    display: none !important;
+}
+.ticket-detail .ticket-info .dotted-line {
+    border-bottom: 1px dotted #ced0da;
+    padding: 10px 0;
+}
+b, strong {
+    font-weight: 500;
+}
+h1, h2, h3, h4, h5, p {
+    line-height: 1.5;
+}
+.ticket-detail .ticket-price-total p {
+    padding: 10px 0;
+}
+.ticket-detail .ticket-price-total span {
+    color: #f26b38;
+    font-size: 20px;
+}
+.age-rating {
+    display: inline-block;
+    background-color: #f26b38;
+    padding: 4px 3px;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 400;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+span.notice {
+    color: #ff0033;
+    padding-left: 5px;
+    font-size: 11px;
+}

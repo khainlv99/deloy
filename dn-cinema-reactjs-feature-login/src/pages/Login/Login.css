@@ -1,0 +1,120 @@
+* {
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
+    sans-serif;
+}
+.login-container {
+  margin: 200px 0;
+}
+.login {
+  background-color: #f26b38;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  height: 50px;
+  border-radius: 3px;
+}
+table {
+  border-collapse: separate !important;
+  border-spacing: 0 7px;
+}
+form .title-login {
+  font-size: 28px;
+  font-weight: 600;
+}
+form input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ced0da;
+  padding: 10px;
+  font-size: 14px;
+}
+table {
+  width: 490px;
+}
+.modify-title {
+  width: 490px;
+  font-size: 14px;
+  color: #a0a3a7;
+}
+.other-login {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #a0a3a7;
+}
+.error-mess {
+  color: red;
+  font-size: 14px;
+}
+.login-facebook {
+  margin: 0 !important;
+  font-size: 14px !important;
+  text-align: center !important;
+}
+.login-facebook:hover {
+  border: #3b5998 solid !important;
+  background-color: #fff !important;
+  color: #3b5998 !important;
+}
+.login:hover {
+  text-decoration: none !important;
+  background-color: transparent;
+  color: #f26b38;
+  border: 1px solid #f26b38;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline !important;
+  color: #000;
+}
+.modal-title {
+  font-size: 20px !important;
+}
+@media screen and (max-width: 768px) {
+  form {
+    box-shadow: none;
+    padding: 50px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .login-container {
+    margin-left: 20px;
+  }
+  form {
+    padding: 30px;
+  }
+  table {
+    width: 350px;
+  }
+  .modify-title {
+    width: 350px;
+  }
+  .login-facebook {
+    display: contents;
+  }
+  .other-login {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 350px) {
+  form {
+    padding: 10px;
+  }
+  table {
+    width: 250px;
+    padding: 0 20px;
+  }
+  .modify-title {
+    width: 250px;
+  }
+  label {
+    display: none !important;
+  }
+  #username::before {
+    content: "Tên đăng nhập";
+  }
+}

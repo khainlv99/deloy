@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,*/
+  /*sans-serif;*/
+  /*background: hsl(0, 3%, 13%);*/
+  /*color: white;*/
+}
+/*body { background: var(--eerie-black); }*/
+
+.icon-c16 {
+  width: 43px;
+  height: 32px;
+  display: inline-block;
+  background: url("https://www.galaxycine.vn/website/images/ic-c16.png")
+    no-repeat;
+  background-size: cover;
+  margin-bottom: -3px;
+}
+.button-age {
+  display: inline-block;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  padding-bottom: 8px;
+  padding-top: 6px;
+  color: white;
+  background-color: #f26b38;
+}
+.bg-movie {
+  background-color: #f26b38;
+}
+
+.text-movie {
+  color: #f26b38;
+}
+
+.img-hover {
+  box-shadow: 2px 2px 5px #f26b38;
+}
+
+.article-movie-home {
+  position: relative;
+  transition: all 300ms;
+  display: table;
+}
+
+/* .article-movie-home:hover{
+    opacity: 0.5;
+} */
+.article-movie-home img {
+  width: 100%;
+  height: auto;
+  display: table-cell;
+  background-color: black;
+}
+
+.article-movie-home .overlay {
+  width: 100%;
+  height: 80%;
+  transition: all 300ms;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.article-movie-home .overlay:hover {
+  opacity: 1;
+}
+
+.article-movie-home .movies-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.article-movie-home .decription-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.secondary-white {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 400;
+  border: 1px solid #ffffff;
+  padding: 15px 30px;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.secondary-white:hover {
+  background-color: #f26b38;
+}
+
+.button-movie {
+  background-color: #f26b38 !important;
+  color: #ffffff !important;
+  padding: 15px 20px !important;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button-movie:hover {
+  transform: scale(1.05);
+  text-decoration: none !important;
+}
+
+th {
+  width: 120px;
+}
+
+.detail-feat-img {
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f9f9f9;
+  text-decoration: none;
+  font-size: 80px;
+  opacity: 0.6;
+}
+
+.play-button:hover {
+  color: #f26b38;
+  opacity: 1;
+}
+
+.input-movie {
+  border: 1px solid;
+  border-color: #f26b38;
+  border-radius: 0;
+  height: 40px;
+}
+
+.button-movie-1 {
+  background-color: #f26b38;
+  color: #ffffff;
+  border: #f26b38;
+  border: 1px solid;
+  font-size: 12px;
+  width: 100%;
+  height: 30px;
+}
+
+.button-movie-1:active {
+  color: #f26b38;
+  border: #ffffff;
+}
+
+.form-check-input:checked {
+  background-color: #f26b38;
+  border-color: #f26b38;
+}
+
+.border-movie {
+  border: 1px solid;
+  border-color: #f26b38;
+}
+
+.shadow-movie {
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {
+    width: 8.33%;
+  }
+
+  .col-s-2 {
+    width: 16.66%;
+  }
+
+  .col-s-3 {
+    width: 25%;
+  }
+
+  .col-s-4 {
+    width: 33.33%;
+  }
+
+  .col-s-5 {
+    width: 41.66%;
+  }
+
+  .col-s-6 {
+    width: 50%;
+  }
+
+  .col-s-7 {
+    width: 58.33%;
+  }
+
+  .col-s-8 {
+    width: 66.66%;
+  }
+
+  .col-s-9 {
+    width: 75%;
+  }
+
+  .col-s-10 {
+    width: 83.33%;
+  }
+
+  .col-s-11 {
+    width: 91.66%;
+  }
+
+  .col-s-12 {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+  }
+
+  .col-2 {
+    width: 16.66%;
+  }
+
+  .col-3 {
+    width: 25%;
+  }
+
+  .col-4 {
+    width: 33.33%;
+  }
+
+  .col-5 {
+    width: 41.66%;
+  }
+
+  .col-6 {
+    width: 50%;
+  }
+
+  .col-7 {
+    width: 58.33%;
+  }
+
+  .col-8 {
+    width: 66.66%;
+  }
+
+  .col-9 {
+    width: 75%;
+  }
+
+  .col-10 {
+    width: 83.33%;
+  }
+
+  .col-11 {
+    width: 91.66%;
+  }
+
+  .col-12 {
+    width: 100%;
+  }
+}
+.text-comingMovie {
+  font-family: Arial;
+}
+
+.abc {
+  width: 75% !important;
+  margin: 0 auto;
+}
+
+.ticket-print {
+  background: #f26b38;
+  border: 1px solid #f26b38;
+}

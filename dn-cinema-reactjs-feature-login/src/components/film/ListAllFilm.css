@@ -1,0 +1,32 @@
+.list-film {
+  margin: 150px 0;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 1.2rem;
+  gap: 5px;
+}
+.pagination .page-num {
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+}
+.pagination .active,
+.pagination .page-num:hover {
+  border-radius: 3px;
+  text-decoration: none !important;
+  background-color: #f26b38;
+  color: #fff;
+}
+.filter {
+  border: #000 2px solid;
+  border-radius: 5px;
+  padding: 8 20px !important;
+  font-weight: 500;
+}

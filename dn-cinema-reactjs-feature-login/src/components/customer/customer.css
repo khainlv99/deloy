@@ -1,0 +1,149 @@
+.color-span-customer {
+  color: red;
+}
+
+@media only screen and (max-width: 700px) {
+  table {
+    margin: 0 10px;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  table th,
+  table td {
+    display: block;
+    border-bottom: none;
+  }
+
+  table tr:last-child td {
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+@media (max-width: 1000px) {
+  .avatar {
+    display: none;
+  }
+}
+
+.border-form-customer {
+  border: 2px groove #f26b38;
+}
+
+.error {
+  color: red;
+}
+.input-customer {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ced0da;
+  font-size: 14px;
+}
+.input-customer-radio {
+  width: 100%;
+  height: 14px;
+}
+
+.text-name {
+  width: 100%;
+}
+.avatar-left {
+  flex: 0 0 auto;
+  width: 20%;
+  margin-top: 7%;
+}
+.form-movie {
+  box-shadow: 1px 3px 10px 5px rgba(0, 0, 0, 0.2);
+}
+.warning {
+  color: red;
+}
+@media screen and (max-width: 1100px) {
+  .container {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .form-movie {
+    box-shadow: none;
+  }
+}
+@media screen and (max-width: 650px) {
+  .kind-movie .col-3 {
+    width: 50%;
+    text-align: left !important;
+  }
+  .kind-list {
+    width: 50% !important;
+    margin: auto;
+  }
+  .col-8 {
+    margin: auto !important;
+  }
+}
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #f093fb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to bottom right,
+    rgba(240, 147, 251, 1),
+    rgba(245, 87, 108, 1)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to bottom right,
+    rgba(240, 147, 251, 1),
+    rgba(245, 87, 108, 1)
+  );
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+.card-registration .select-arrow {
+  top: 13px;
+}
+.labelInput {
+  position: absolute;
+  margin-top: 2%;
+  transition: 0.3s;
+  padding: 0 5px;
+  pointer-events: unset;
+  font-size: 14px;
+}
+.input {
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid black;
+}
+.input:valid + .labelInput,
+.input:focus + .labelInput {
+  transform: translate(10%, -80%);
+  color: black;
+  background-color: #fff;
+}
+.input:valid + .inputContent,
+.input:focus + .inputContent {
+  top: -70%;
+  color: black;
+  background-color: #fff;
+}
+.inputBox {
+  position: relative;
+}
+.inputBox label {
+  position: absolute;
+  top: 0;
+  padding: 0%;
+  pointer-events: none;
+}
+.input:valid + .labelInput1 {
+  transform: translate(10%, -80%);
+  color: black;
+}
